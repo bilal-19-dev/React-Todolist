@@ -1,0 +1,224 @@
+body {
+  color: black;
+  background-color: rgb(18, 18, 77);
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  font-optical-sizing: auto;
+  font-weight: 100px ;
+  font-style: normal;
+}
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  min-height: 100vh;
+  font-size: calc(10px + 2vmin);
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.navbar {
+  background-color: rgb(0, 128, 107);
+  padding: 10px;
+  align-items: center;
+  box-shadow: 0px 0px 10px black;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.main-content {
+  text-decoration:#ffffff;
+  color: white;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.btn {
+  padding: 7px;
+  margin: 10px;
+  border: none;
+  color: white;
+  border-radius: 7px;
+  background-color: rgb(121, 1, 177);
+  box-shadow: 0px  0px 10px black;
+  transition: all 0.3s ease;
+  /* height: 70px;
+  width: 70px;
+  background-color: #61dafb;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  text-transform: uppercase; */
+  /* animation: App-logo-spin infinite 20s linear; */
+}
+
+.btn:hover {
+  background-color: rgb(77, 0, 112);
+  box-shadow: 0px 0px 20px black;
+  transform: scale(1.1);
+  transform:translateX(3px)
+}
+
+.btn:disabled {
+  padding: 7px;
+  margin: 10px;
+  border: none;
+  color: white;
+  border-radius: 7px;
+  background-color: rgb(121, 1, 177);
+  box-shadow: 0px  0px 10px black;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.btn:active {
+  background-color: rgb(0, 128, 107);
+  box-shadow: 0px 0px 5px black;
+  transform: scale(1.05);
+  animation: active-btn 0.3s ease;
+}
+
+@keyframes active-btn {
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  } 
+  0% {
+    transform: rotate(0deg);
+  }
+}
+
+.post {
+  background-color: #ffffff;
+  width: 500px;
+  color: black;
+  border: solid 5px rgb(0, 128, 107);
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  } 
+}
+
+.main {
+  padding: 10px;
+  width: 70%;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+}
+
+.con-btn {
+  width: 200px;
+  padding: 0px 20px;
+  border: solid 5px rgb(0, 128, 107);
+  display: flex;
+  flex-wrap: wrap;
+  align-items:start;
+  justify-content: space-around;
+}
+
+.Titel {
+  display: inline-block;
+  animation: typing 0.5s infinite;
+}
+
+@keyframes typing {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+.form {
+  background-color: rgb(63, 20, 145);
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.form form {
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.form input, select {
+  width: 90%;
+  padding: 4px;
+  margin: 3px;
+  border: none;
+  border-radius: 5px;
+}
+.form label {
+  margin: 0px;
+}
+.form hr {
+  width: 90%;
+}
+.Success, .Ererr {
+  width: 100%;
+  height: 200%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position:fixed;
+  background-color: rgba(0, 0, 0, 0.507);
+}
+
+.Success div {
+  color: green;
+  width: 80%;
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+.Ererr div {
+  color: red;
+  width: 80%;
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+
+.btnIcon {
+  background-color: rgb(255, 255, 255);
+}
+
+.btnIcon:hover {
+  box-shadow: inset 0px 0px 20px rgb(0,0,) ;
+}
