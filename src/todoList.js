@@ -4,8 +4,8 @@ import Grid from '@mui/material/Grid';
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import DoneOutlinedIcon from '@mui/icons-material/DoneOutlined';
-import { Collapse } from '@mui/material';
-import { useState } from 'react';
+import { Collapse, collapseClasses } from '@mui/material';
+import { useState, useMemo } from 'react';
 import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
 
 
@@ -18,7 +18,8 @@ export default function TodoList({ todo, setTodo, setOpen, typetodo, search, set
         Alert: type
     });
   };
-  const TodoListAll = todo.filter((item) => {
+  const TodoListAll = useMemo (() => {
+    return todo.filter((item) => {
       if (search.search === '') {
         return item
       }else {
@@ -87,14 +88,16 @@ export default function TodoList({ todo, setTodo, setOpen, typetodo, search, set
             </Collapse>
           </Box>
         </Grid>
-      );
-    })
-    const TodoListDone = todo.filter((item) => {
-      if (search.search === '') {
-        return item.is_done === true;
-      }else {
-        return item.is_done === true && (item.title.includes(search.search) || item.details.includes(search.search));
-      }
+        );
+      });
+    }, [todo, Collapsed]);
+    const TodoListDone = useMemo (() => {
+      return todo.filter((item) => {
+        if (search.search === '') {
+          return item.is_done === true;
+        }else {
+          return item.is_done === true && (item.title.includes(search.search) || item.details.includes(search.search));
+        }
       }).map((item) => {
         return (
           <Grid item xs={12} key={item.id}>
@@ -148,7 +151,9 @@ export default function TodoList({ todo, setTodo, setOpen, typetodo, search, set
         );
       
     });
-    const TodoListNotDone = todo.filter((item) => {
+    }, [todo, Collapsed]);
+    const TodoListNotDone = useMemo (() => {
+      return todo.filter((item) => {
       if (search.search === '') {
         return item.is_done === false;
       }else {
@@ -208,7 +213,7 @@ export default function TodoList({ todo, setTodo, setOpen, typetodo, search, set
         );
     }
     );
-
+    }, [todo, Collapsed]);
     const notdone = () => { 
       return (
         <Grid item xs={12}>
